@@ -24,8 +24,8 @@ app.listen(3000, function() {
 });
 
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/index.html");
-  //res.write
+  //res.sendFile(__dirname + "/index.html");
+  res.render("home.ejs", {text: homeStartingContent});
 })
 
 app.get("/about", function(req, res) {
