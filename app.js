@@ -16,15 +16,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-
-
-
-
-
-
-
-
-
 console.log("Hello world 5");
 
 
@@ -35,4 +26,12 @@ app.listen(3000, function() {
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/index.html");
   //res.write
+})
+
+app.get("/about", function(req, res) {
+  res.sendFile(__dirname + "/about.html");
+})
+
+app.get("/sitemap", function(req, res) {
+  res.sendFile(__dirname + "/sitemap.html");
 })
