@@ -47,6 +47,9 @@ app.get("/contact", function(req, res) {
 app.get("/compose", (req, res) =>
   res.render("compose.ejs"));
 
+app.post("/compose", (req, res) =>
+  console.log(req.body.postTitle));
+
 // Replace entire file with the text
 function writeToFile(text) {
   fs.writeFile(__dirname + "/myFile.txt", text, function(err) {
