@@ -5,6 +5,10 @@
   <%= text %>
 </p>
 
-<% console.log(posts); %>
+<% for (var i=0; i<posts.length; i++) { %>
+<%   console.log(posts[i].title + " : " + posts[i].body); %>
+<% } %>
+
+</posts.length;>
 
 <%- include('partials/footer.ejs') -%>
