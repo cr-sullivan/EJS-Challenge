@@ -28,18 +28,21 @@ app.listen(3000, function() {
   console.log("Server started on port 3000 at " + currentTime);
 });
 
-app.get("/", function(req, res) {
-  //res.sendFile(__dirname + "/index.html");
-  res.render("home.ejs", {text: homeStartingContent});
-})
+// app.get("/", function(req, res) {
+//   //res.sendFile(__dirname + "/index.html");
+//   res.render("home.ejs", {text: homeStartingContent});
+// })
+
+app.get("/", (req, res) =>
+  res.render("home.ejs", {text: homeStartingContent}));
 
 app.get("/about", function(req, res) {
   res.render("about.ejs", {text: aboutContent});
-})
+});
 
 app.get("/contact", function(req, res) {
   res.render("contact.ejs", {text: contactContent});
-})
+});
 
 // Replace entire file with the text
 function writeToFile(text) {
