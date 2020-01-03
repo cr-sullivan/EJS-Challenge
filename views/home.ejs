@@ -1,5 +1,5 @@
 <%- include('partials/header.ejs') -%>
-<h1>Hello</h1>
+<h1>Home</h1>
 
 <p>
   <%= text %>
@@ -7,6 +7,10 @@
 
 <% posts.forEach(function(post) { %>
 <%   console.log(post.title + " : " + post.body); %>
+     <h1><%= post.title %></h1>
+     <p>
+       <%=post.body%>
+    </p>
 <% }) %>
 
 <%- include('partials/footer.ejs') -%>
