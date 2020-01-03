@@ -34,11 +34,11 @@ app.get("/", function(req, res) {
 })
 
 app.get("/about", function(req, res) {
-  res.sendFile(__dirname + "/about.html");
+  res.render("about.ejs", {text: aboutContent});
 })
 
-app.get("/sitemap", function(req, res) {
-  res.sendFile(__dirname + "/sitemap.html");
+app.get("/contact", function(req, res) {
+  res.render("contact.ejs", {text: contactContent});
 })
 
 // Replace entire file with the text
