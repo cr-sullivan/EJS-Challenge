@@ -35,7 +35,7 @@ app.listen(3000, function() {
 // })
 
 app.get("/", (req, res) =>
-  res.render("home.ejs", {text: homeStartingContent}));
+  res.render("home.ejs", {text: homeStartingContent, posts: posts}));
 
 app.get("/about", function(req, res) {
   res.render("about.ejs", {text: aboutContent});
@@ -56,7 +56,6 @@ app.post("/compose", (req, res) => {
     body: req.body.postBody
   };
   posts.push(post);
-  console.log(posts);
   res.redirect("/");
 });
 
