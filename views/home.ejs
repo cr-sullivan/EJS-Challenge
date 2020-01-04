@@ -7,9 +7,10 @@
 
 <% posts.forEach(function(post) { %>
 <%   console.log(post.title + " : " + post.body); %>
-     <h1><%= post.title %></h1>
+     <h1><%=post.title%></h1>
      <p>
-       <%=post.body%>
+       <%=post.body.substring(0, 100)+"..."%>
+       <a href="/posts/<%=post.title%>">Read More</a>
     </p>
 <% }) %>
 
