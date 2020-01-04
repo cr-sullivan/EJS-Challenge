@@ -61,20 +61,19 @@ app.post("/compose", (req, res) => {
 });
 
 app.get("/posts/:postName", function(req, res) {
-  //console.log("/posts/:postName");
   let found = false;
   const postRequested = req.params.postName;
   posts.forEach(function(post) {
     if (_.lowerCase(post.title) === _.lowerCase(postRequested)) {
       found = true;
       console.log("Found: " + post.title + ": " + post.body)
+      res.render("post.ejs", {post: post});
     }
   });
 
   if (!found) {
     console.log("Not found: " + postRequested);
   }
-
 })
 
 // Replace entire file with the text
